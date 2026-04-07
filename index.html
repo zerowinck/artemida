@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптация подростка к современным технологиям | Рекомендации</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0b0f17;
+            background-image: radial-gradient(circle at 15% 30%, #1f2b3a 0%, #0a0e14 90%);
+            color: #e0e7f0;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(18, 25, 36, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 40px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(90, 140, 200, 0.15);
+            padding: 40px;
+            border: 1px solid rgba(80, 140, 210, 0.2);
+        }
+
+        /* Заголовок */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            background: linear-gradient(145deg, #9fc5ff, #6ba6e3, #9ad0f5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px #2f5a8c55;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #b0cef0;
+            background: rgba(20, 35, 55, 0.7);
+            display: inline-block;
+            padding: 8px 30px;
+            border-radius: 60px;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+            border: 1px solid #375a7e;
+        }
+
+        /* Блоки с рекомендациями */
+        .recommendation-block {
+            margin-bottom: 45px;
+        }
+
+        .block-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #3a6b93;
+            color: #d2e5ff;
+        }
+
+        .block-title i {
+            background: #254b70;
+            padding: 12px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            color: #b6dcff;
+            box-shadow: 0 0 12px #3065a0;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 15px;
+        }
+
+        .card {
+            background: #172433;
+            border-radius: 24px;
+            padding: 25px;
+            box-shadow: 0 18px 28px -8px #000000, 0 0 0 1px #2d4b6b inset;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid #2e4a6a;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 28px 38px -8px #03070e, 0 0 0 1px #5780b0 inset;
+        }
+
+        .card-icon {
+            font-size: 2.2rem;
+            background: #10202f;
+            width: 60px;
+            height: 60px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: #8bb9ff;
+            border: 1px solid #2a4b70;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #c6defa;
+        }
+
+        .card p {
+            color: #b6cde0;
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .card ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #c1d1e6;
+            font-size: 0.95rem;
+        }
+
+        .card ul li i {
+            color: #73c1b2;
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
+        .note-section {
+            background: linear-gradient(135deg, #18273a, #101d2c);
+            border-radius: 28px;
+            padding: 30px;
+            margin-top: 35px;
+            border-left: 10px solid #d4a373;
+            border: 1px solid #314e6b;
+        }
+
+        .note-section h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #c9e1fa;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .note-section h3 i {
+            color: #f4acb7;
+        }
+
+        .note-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+            margin-top: 15px;
+        }
+
+        .note-item {
+            background: #1e3148;
+            border-radius: 20px;
+            padding: 18px 22px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            border: 1px solid #3d6088;
+        }
+
+        .note-item i {
+            font-size: 1.3rem;
+            color: #86b9f0;
+            margin-top: 2px;
+        }
+
+        .note-item p {
+            color: #cfdeed;
+            font-size: 0.98rem;
+            line-height: 1.5;
+        }
+
+        /* Стили для теста */
+        .test-card {
+            background: #1a293b;
+            border-radius: 24px;
+            padding: 30px;
+            margin: 35px 0 25px;
+            border: 1px solid #3a5e83;
+        }
+
+        .test-question {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #c9e1fa;
+            margin-bottom: 20px;
+        }
+
+        .test-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .test-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            background: #0f1e2f;
+            border-radius: 40px;
+            border: 1px solid #2a4a70;
+            cursor: pointer;
+            transition: 0.15s;
+        }
+
+        .test-option:hover {
+            background: #1d3855;
+            border-color: #5880b0;
+        }
+
+        .test-option input[type="radio"] {
+            accent-color: #479faf;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .test-option label {
+            flex: 1;
+            cursor: pointer;
+            color: #d0e2fa;
+        }
+
+        .test-btn {
+            background: #2b4b73;
+            border: 1px solid #88c0ff;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .test-btn:hover {
+            background: #3d6b99;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .test-result {
+            margin-top: 20px;
+            padding: 15px 20px;
+            background: #1e3148;
+            border-radius: 20px;
+            display: none;
+            border-left: 5px solid #86b9f0;
+        }
+
+        /* Подвал */
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #9ab9d9;
+            font-size: 0.9rem;
+            border-top: 2px solid #1f3b57;
+            padding-top: 25px;
+        }
+
+        .footer a {
+            color: #88c0ff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 700px) {
+            .container { padding: 25px; }
+            .header h1 { font-size: 1.8rem; }
+            .block-title { font-size: 1.5rem; }
+            .note-item { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Заголовок -->
+        <div class="header">
+            <h1>📱 Сложность адаптации подростка<br>к современным технологиям</h1>
+            <p>Методические рекомендации для эффективного и безопасного внедрения цифровых инструментов</p>
+        </div>
+
+        <!-- Блок: Методы -->
+        <div class="recommendation-block">
+            <div class="block-title">
+                <i class="fas fa-chalkboard-user"></i>
+                <span>Методы</span>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-chalkboard"></i></div>
+                    <h3>Наглядное представление материала</h3>
+                    <p>Слайды с иллюстрациями и анимацией оживляют занятие и увеличивают уровень понимания. Мультимедийные презентации делают сложные темы доступными и запоминающимися.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-gamepad"></i></div>
+                    <h3>Дидактические игры</h3>
+                    <p>Использование игр на отдельных этапах урока помогает увидеть, как знания могут применяться на практике, в реальной жизненной ситуации. Повышает мотивацию и вовлеченность.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-laptop-house"></i></div>
+                    <h3>Дистанционные образовательные технологии</h3>
+                    <p>Позволяют подростку самостоятельно выбирать время и интенсивность занятий, а преподавателю — оперативно реагировать на запросы и применять индивидуальную адаптирующую методику.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-chalkboard-user"></i></div>
+                    <h3>Интерактивные инструменты</h3>
+                    <p>Интерактивная доска и другие цифровые средства для наглядности и активного участия подростка в учебном процессе. Повышают вовлеченность и обратную связь.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок: Формы занятий -->
+        <div class="recommendation-block">
+            <div class="block-title">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Формы занятий</span>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-tv"></i></div>
+                    <h3>Уроки с использованием мультимедийных средств</h3>
+                    <p>Например, на уроке литературы можно использовать файлы о буквах и звуках, визуальные образы и аудиосопровождение для более глубокого восприятия.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-video"></i></div>
+                    <h3>Занятия с дистанционными технологиями</h3>
+                    <p>Занятия могут быть дополнены различной информацией: видеофрагментами, интерактивными схемами, звуковыми файлами. Гибкость формата расширяет образовательные возможности.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>Проектная деятельность с ИТ</h3>
+                    <p>Ученик самостоятельно организует свою работу, мотивированную значимой целью проекта. В ходе деятельности происходит ревизия имеющихся знаний, выявление недостающих и добавление новых.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-comments"></i></div>
+                    <h3>Виртуальное общение</h3>
+                    <p>Беседы в социальных сетях и мессенджерах, видеоконференции объединяют всех участников для обсуждений, обмена мнениями, фотографиями, комментариями. Поддерживают непрерывную коммуникацию.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок: Ресурсы -->
+        <div class="recommendation-block">
+            <div class="block-title">
+                <i class="fas fa-database"></i>
+                <span>Ресурсы</span>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Цифровые образовательные платформы</h3>
+                    <p>Позволяют использовать как готовый материал, так и добавлять и создавать свои учебные материалы. Единая среда для персонализированного обучения.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-robot"></i></div>
+                    <h3>Рекомендательные системы</h3>
+                    <p>Контентно-ориентированные системы анализируют характеристики учебных материалов и сопоставляют их с профилем пользователя. Коллаборативная фильтрация основывается на данных о предпочтениях других пользователей.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-comment-dots"></i></div>
+                    <h3>Цифровые инструменты для коммуникации</h3>
+                    <p>Беседы в социальных сетях, мессенджеры и форумы позволяют объединить всех участников образовательного процесса для обсуждений, обмена мнениями, фотографиями и оперативной обратной связи.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок: Важные замечания -->
+        <div class="note-section">
+            <h3><i class="fas fa-lightbulb"></i> Важные замечания</h3>
+            <div class="note-list">
+                <div class="note-item">
+                    <i class="fas fa-handshake"></i>
+                    <p><strong>Сочетание технологий с традиционными методами</strong><br>Личная коммуникация с педагогами и сверстниками остается ключевой для успешной социальной адаптации.</p>
+                </div>
+                <div class="note-item">
+                    <i class="fas fa-hourglass-half"></i>
+                    <p><strong>Контроль экранного времени</strong><br>Следует контролировать время, которое подросток проводит за экраном, чтобы избежать цифровой перегрузки и сохранить здоровье.</p>
+                </div>
+                <div class="note-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <p><strong>Безопасность данных и конфиденциальность</strong><br>Важно обеспечить защиту персональных данных и соблюдать конфиденциальность при использовании онлайн-сервисов.</p>
+                </div>
+                <div class="note-item">
+                    <i class="fas fa-users-viewfinder"></i>
+                    <p><strong>Учет возрастных особенностей</strong><br>При внедрении ИТ-решений стоит учитывать возрастные и психологические особенности подростков, а также технические возможности образовательного учреждения.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- СТАРЫЕ РЕКОМЕНДАЦИИ: Советы для подростков -->
+        <div class="recommendation-block">
+            <div class="block-title">
+                <i class="fas fa-lightbulb"></i>
+                <span>Советы для подростков: как не утонуть в сети</span>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Цифровой детокс</h3>
+                    <p>Практикуй "чистые часы" — время без экрана. Начни с 30 минут в день.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Убери телефон за час до сна</li>
+                        <li><i class="fas fa-check-circle"></i> Не завтракай с лентой новостей</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Осознанное потребление</h3>
+                    <p>Задавай вопрос: "Зачем я открываю это приложение?"</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Отпишись от аккаунтов, вызывающих тревогу</li>
+                        <li><i class="fas fa-check-circle"></i> Выбирай созидательный контент</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-people-arrows"></i></div>
+                    <h3>Живое общение</h3>
+                    <p>Технологии не заменят реальных эмоций. Встречайся с друзьями лично.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Спорт / хобби вне сети</li>
+                        <li><i class="fas fa-check-circle"></i> Разговоры с близкими без телефонов</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ТЕСТ: Признаки цифровой перегрузки -->
+        <div class="test-card">
+            <div class="test-question">📊 Тест: Есть ли у тебя признаки цифровой перегрузки?</div>
+            <div class="test-options">
+                <div class="test-option">
+                    <input type="radio" name="q1" id="q1a">
+                    <label for="q1a">Я проверяю телефон сразу после пробуждения, ещё до того, как встать с кровати</label>
+                </div>
+                <div class="test-option">
+                    <input type="radio" name="q1" id="q1b">
+                    <label for="q1b">Я могу спокойно позавтракать без телефона</label>
+                </div>
+            </div>
+            <div class="test-options">
+                <div class="test-option">
+                    <input type="radio" name="q2" id="q2a">
+                    <label for="q2a">Я чувствую тревогу, если не могу найти телефон</label>
+                </div>
+                <div class="test-option">
+                    <input type="radio" name="q2" id="q2b">
+                    <label for="q2b">Я спокойно отношусь к временному отсутствию связи</label>
+                </div>
+            </div>
+            <div>
+                <button class="test-btn" onclick="showTestResult()"><i class="fas fa-chart-simple"></i> Узнать результат</button>
+            </div>
+            <div id="testResult" class="test-result"></div>
+        </div>
+
+        <!-- Подвал -->
+        <div class="footer">
+            <p>© 2025 | Рекомендации по адаптации подростков к современным технологиям</p>
+            <p style="margin-top: 8px; font-size: 0.85rem;">Материалы основаны на современных педагогических и психологических подходах</p>
+        </div>
+    </div>
+
+    <script>
+        function showTestResult() {
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const resultDiv = document.getElementById('testResult');
+            
+            if (!q1 || !q2) {
+                resultDiv.style.display = 'block';
+                resultDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Пожалуйста, ответьте на оба вопроса, чтобы увидеть результат.';
+                resultDiv.style.background = '#3a2a2a';
+                resultDiv.style.borderLeftColor = '#f4acb7';
+                return;
+            }
+            
+            let score = 0;
+            if (q1.id === 'q1a') score++;
+            if (q2.id === 'q2a') score++;
+            
+            resultDiv.style.display = 'block';
+            
+            if (score === 0) {
+                resultDiv.innerHTML = '<i class="fas fa-smile"></i> <strong>Отлично!</strong> У вас здоровые отношения с технологиями. Продолжайте в том же духе!';
+                resultDiv.style.background = '#1e4a3a';
+                resultDiv.style.borderLeftColor = '#73c1b2';
+            } else if (score === 1) {
+                resultDiv.innerHTML = '<i class="fas fa-meh"></i> <strong>Средний уровень риска.</strong> Возможно, стоит задуматься о некоторых привычках. Попробуйте внедрить цифровой детокс.';
+                resultDiv.style.background = '#4a4a2a';
+                resultDiv.style.borderLeftColor = '#e0b058';
+            } else {
+                resultDiv.innerHTML = '<i class="fas fa-frown"></i> <strong>Высокий уровень цифровой нагрузки.</strong> Рекомендуем обратить внимание на советы в разделе "Советы для подростков" и попробовать уменьшить время в соцсетях.';
+                resultDiv.style.background = '#5a2a2a';
+                resultDiv.style.borderLeftColor = '#f4acb7';
+            }
+        }
+    </script>
+</body>
+</html>
