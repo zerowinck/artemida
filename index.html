@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптация подростка к технологиям | Рекомендации</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0b0f17;
+            background-image: radial-gradient(circle at 15% 30%, #1f2b3a 0%, #0a0e14 90%);
+            color: #e0e7f0;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(18, 25, 36, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 40px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(90, 140, 200, 0.15);
+            padding: 40px;
+            border: 1px solid rgba(80, 140, 210, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            background: linear-gradient(145deg, #9fc5ff, #6ba6e3, #9ad0f5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #b0cef0;
+            background: rgba(20, 35, 55, 0.7);
+            display: inline-block;
+            padding: 8px 30px;
+            border-radius: 60px;
+            font-weight: 500;
+            border: 1px solid #375a7e;
+        }
+
+        .block-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 45px 0 25px 0;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #3a6b93;
+            color: #d2e5ff;
+        }
+
+        .block-title i {
+            background: #254b70;
+            padding: 12px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            color: #b6dcff;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 15px;
+        }
+
+        .card {
+            background: #172433;
+            border-radius: 24px;
+            padding: 25px;
+            box-shadow: 0 18px 28px -8px #000000, 0 0 0 1px #2d4b6b inset;
+            transition: all 0.2s ease;
+            border: 1px solid #2e4a6a;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 28px 38px -8px #03070e, 0 0 0 1px #5780b0 inset;
+        }
+
+        .card-icon {
+            font-size: 2.2rem;
+            background: #10202f;
+            width: 60px;
+            height: 60px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: #8bb9ff;
+            border: 1px solid #2a4b70;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #c6defa;
+        }
+
+        .card p {
+            color: #b6cde0;
+            font-size: 0.95rem;
+        }
+
+        .note-section {
+            background: linear-gradient(135deg, #18273a, #101d2c);
+            border-radius: 28px;
+            padding: 30px;
+            margin: 35px 0;
+            border: 1px solid #314e6b;
+        }
+
+        .note-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+            margin-top: 15px;
+        }
+
+        .note-item {
+            background: #1e3148;
+            border-radius: 20px;
+            padding: 18px 22px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            border: 1px solid #3d6088;
+        }
+
+        .note-item i {
+            font-size: 1.3rem;
+            color: #86b9f0;
+        }
+
+        /* Тест */
+        .test-card {
+            background: #1a293b;
+            border-radius: 24px;
+            padding: 30px;
+            margin: 35px 0 25px;
+            border: 1px solid #3a5e83;
+        }
+
+        .test-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #c9e1fa;
+            margin-bottom: 15px;
+        }
+
+        .test-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .test-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            background: #0f1e2f;
+            border-radius: 40px;
+            border: 1px solid #2a4a70;
+            cursor: pointer;
+        }
+
+        .test-option:hover {
+            background: #1d3855;
+        }
+
+        .test-option input {
+            accent-color: #479faf;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .test-option label {
+            flex: 1;
+            cursor: pointer;
+            color: #d0e2fa;
+        }
+
+        .test-btn {
+            background: #2b4b73;
+            border: 1px solid #88c0ff;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .test-btn:hover {
+            background: #3d6b99;
+            transform: translateY(-2px);
+        }
+
+        .test-result {
+            margin-top: 20px;
+            padding: 15px 20px;
+            background: #1e3148;
+            border-radius: 20px;
+            display: none;
+            border-left: 5px solid #86b9f0;
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #9ab9d9;
+            font-size: 0.9rem;
+            border-top: 2px solid #1f3b57;
+            padding-top: 25px;
+        }
+
+        @media (max-width: 700px) {
+            .container { padding: 25px; }
+            .header h1 { font-size: 1.8rem; }
+            .block-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📱 Сложность адаптации подростка<br>к современным технологиям</h1>
+            <p>Методические рекомендации, полезные сервисы и тест для самодиагностики</p>
+        </div>
+
+        <!-- МЕТОДЫ (удалена карточка "Наглядное представление материала") -->
+        <div class="block-title">
+            <i class="fas fa-chalkboard-user"></i>
+            <span>Методы</span>
+        </div>
+        <div class="cards-grid">
+            <div class="card" data-url="https://learningapps.org/">
+                <div class="card-icon"><i class="fas fa-gamepad"></i></div>
+                <h3>Дидактические игры</h3>
+                <p>LearningApps.org — бесплатный сервис для создания интерактивных упражнений, викторин, кроссвордов и дидактических игр по любым предметам.</p>
+            </div>
+            <div class="card" data-url="https://uchi.ru/">
+                <div class="card-icon"><i class="fas fa-laptop-house"></i></div>
+                <h3>Дистанционные образовательные технологии</h3>
+                <p>Учи.ру — интерактивная образовательная платформа с курсами по всем предметам, позволяющая подросткам самостоятельно выбирать время и интенсивность занятий.</p>
+            </div>
+            <div class="card" data-url="https://myboards.ru/">
+                <div class="card-icon"><i class="fas fa-chalkboard-user"></i></div>
+                <h3>Интерактивные инструменты</h3>
+                <p>MyBoards — российская онлайн-доска для совместной работы в реальном времени, позволяет активно вовлекать подростков в учебный процесс.</p>
+            </div>
+        </div>
+
+        <!-- ФОРМЫ ЗАНЯТИЙ -->
+        <div class="block-title">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Формы занятий</span>
+        </div>
+        <div class="cards-grid">
+            <div class="card" data-url="https://моиуроки.рф/">
+                <div class="card-icon"><i class="fas fa-tv"></i></div>
+                <h3>Уроки с мультимедийными средствами</h3>
+                <p>Моиуроки.рф — библиотека цифрового образовательного контента: виртуальные лаборатории, интерактивные тренажеры, видеоролики и инфографика по всем предметам.</p>
+            </div>
+            <div class="card" data-url="https://resh.edu.ru/">
+                <div class="card-icon"><i class="fas fa-video"></i></div>
+                <h3>Занятия с дистанционными технологиями</h3>
+                <p>Российская электронная школа — более 120 интерактивных уроков с видеофрагментами, интерактивными схемами и тренажёрами по всем предметам.</p>
+            </div>
+            <div class="card" data-url="https://edu.skysmart.ru/">
+                <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+                <h3>Проектная деятельность с ИТ</h3>
+                <p>Skysmart — интерактивная рабочая тетрадь с заданиями по разным предметам, развивающая самостоятельность и проектное мышление.</p>
+            </div>
+            <div class="card" data-url="https://sferum.ru/">
+                <div class="card-icon"><i class="fas fa-comments"></i></div>
+                <h3>Виртуальное общение</h3>
+                <p>Сферум — российская образовательная платформа для видеоконференций, чатов и создания закрытых учебных сообществ для общения педагогов и учеников.</p>
+            </div>
+        </div>
+
+        <!-- РЕСУРСЫ -->
+        <div class="block-title">
+            <i class="fas fa-database"></i>
+            <span>Ресурсы</span>
+        </div>
+        <div class="cards-grid">
+            <div class="card" data-url="https://dnevnik.ru/">
+                <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Цифровые образовательные платформы</h3>
+                <p>Дневник.ру — единая образовательная платформа, объединяющая электронный журнал, библиотеку материалов и сервисы дистанционного обучения.</p>
+            </div>
+            <div class="card" data-url="https://education.yandex.ru/">
+                <div class="card-icon"><i class="fas fa-robot"></i></div>
+                <h3>Рекомендательные системы</h3>
+                <p>Яндекс.Учебник — платформа с персонализированными заданиями, где ИИ подбирает упражнения под уровень каждого ученика.</p>
+            </div>
+            <div class="card" data-url="https://vk.com/">
+                <div class="card-icon"><i class="fas fa-comment-dots"></i></div>
+                <h3>Цифровые инструменты для коммуникации</h3>
+                <p>ВКонтакте — социальная сеть с возможностью создания учебных сообществ, видеозвонков, чатов и обсуждений.</p>
+            </div>
+        </div>
+
+        <!-- ВАЖНЫЕ ЗАМЕЧАНИЯ -->
+        <div class="note-section">
+            <h3 style="font-size:1.6rem; margin-bottom:20px;"><i class="fas fa-lightbulb"></i> Важные замечания</h3>
+            <div class="note-list">
+                <div class="note-item"><i class="fas fa-handshake"></i><p><strong>Сочетание технологий с традиционными методами</strong><br>Личная коммуникация остается ключевой.</p></div>
+                <div class="note-item"><i class="fas fa-hourglass-half"></i><p><strong>Контроль экранного времени</strong><br>Чтобы избежать цифровой перегрузки.</p></div>
+                <div class="note-item"><i class="fas fa-shield-alt"></i><p><strong>Безопасность данных</strong><br>Конфиденциальность при использовании онлайн-сервисов.</p></div>
+                <div class="note-item"><i class="fas fa-users-viewfinder"></i><p><strong>Учет возрастных особенностей</strong><br>Психологические и технические возможности.</p></div>
+            </div>
+        </div>
+
+        <!-- СОВЕТЫ ДЛЯ ПОДРОСТКОВ -->
+        <div class="block-title">
+            <i class="fas fa-lightbulb"></i>
+            <span>Советы для подростков</span>
+        </div>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-clock"></i></div>
+                <h3>Цифровой детокс</h3>
+                <p>Практикуй "чистые часы" — время без экрана. Начни с 30 минут в день.</p>
+                <ul style="list-style: none; margin-top: 12px;">
+                    <li style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><i class="fas fa-check-circle" style="color:#73c1b2;"></i> Убери телефон за час до сна</li>
+                    <li style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><i class="fas fa-check-circle" style="color:#73c1b2;"></i> Не завтракай с лентой новостей</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-brain"></i></div>
+                <h3>Осознанное потребление</h3>
+                <p>Задавай вопрос: "Зачем я открываю это приложение?"</p>
+                <ul style="list-style: none; margin-top: 12px;">
+                    <li style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><i class="fas fa-check-circle" style="color:#73c1b2;"></i> Отпишись от аккаунтов, вызывающих тревогу</li>
+                    <li style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><i class="fas fa-check-circle" style="color:#73c1b2;"></i> Выбирай созидательный контент</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-people-arrows"></i></div>
+                <h3>Живое общение</h3>
+                <p>Технологии не заменят реальных эмоций. Встречайся с друзьями лично.</p>
+                <ul style="list-style: none; margin-top: 12px;">
+                    <li style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><i class="fas fa-check-circle" style="color:#73c1b2;"></i> Спорт / хобби вне сети</li>
+                    <li style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><i class="fas fa-check-circle" style="color:#73c1b2;"></i> Разговоры с близкими без телефонов</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ТЕСТ (4 вопроса) -->
+        <div class="test-card">
+            <div class="test-question">📊 Тест: Есть ли у тебя признаки цифровой перегрузки?</div>
+            
+            <div class="test-question">1. Как ты начинаешь свой день?</div>
+            <div class="test-options">
+                <div class="test-option"><input type="radio" name="q1" id="q1a"><label for="q1a">Сразу проверяю телефон, ещё в постели</label></div>
+                <div class="test-option"><input type="radio" name="q1" id="q1b"><label for="q1b">Спокойно встаю, завтракаю без телефона</label></div>
+            </div>
+
+            <div class="test-question">2. Как ты реагируешь, если не можешь найти телефон?</div>
+            <div class="test-options">
+                <div class="test-option"><input type="radio" name="q2" id="q2a"><label for="q2a">Чувствую тревогу, панику, сразу ищу</label></div>
+                <div class="test-option"><input type="radio" name="q2" id="q2b"><label for="q2b">Спокойно, займусь чем-то другим</label></div>
+            </div>
+
+            <div class="test-question">3. Сколько времени ты проводишь в соцсетях в день?</div>
+            <div class="test-options">
+                <div class="test-option"><input type="radio" name="q3" id="q3a"><label for="q3a">Более 4 часов, часто теряю счёт времени</label></div>
+                <div class="test-option"><input type="radio" name="q3" id="q3b"><label for="q3b">Меньше 2 часов, могу легко отвлечься</label></div>
+            </div>
+
+            <div class="test-question">4. Как ты засыпаешь?</div>
+            <div class="test-options">
+                <div class="test-option"><input type="radio" name="q4" id="q4a"><label for="q4a">Листаю ленту в кровати, засыпаю поздно</label></div>
+                <div class="test-option"><input type="radio" name="q4" id="q4b"><label for="q4b">Откладываю телефон за час до сна</label></div>
+            </div>
+
+            <button class="test-btn" onclick="showTestResult()"><i class="fas fa-chart-simple"></i> Узнать результат</button>
+            <div id="testResult" class="test-result"></div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 | Рекомендации по адаптации подростков к современным технологиям</p>
+            <p style="margin-top: 8px; font-size: 0.85rem;">Нажмите на любую карточку с методом, формой занятия или ресурсом — откроется полезный сайт с инструментами</p>
+        </div>
+    </div>
+
+    <script>
+        // Открытие сайтов при клике на карточку
+        document.querySelectorAll('.card').forEach(card => {
+            const url = card.getAttribute('data-url');
+            if (url) {
+                card.addEventListener('click', function() {
+                    window.open(url, '_blank');
+                });
+            }
+        });
+
+        // Тест с 4 вопросами
+        function showTestResult() {
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+            const q4 = document.querySelector('input[name="q4"]:checked');
+            const resultDiv = document.getElementById('testResult');
+            
+            if (!q1 || !q2 || !q3 || !q4) {
+                resultDiv.style.display = 'block';
+                resultDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Пожалуйста, ответьте на все 4 вопроса.';
+                resultDiv.style.background = '#3a2a2a';
+                resultDiv.style.borderLeftColor = '#f4acb7';
+                return;
+            }
+            
+            let score = 0;
+            if (q1.id === 'q1a') score++;
+            if (q2.id === 'q2a') score++;
+            if (q3.id === 'q3a') score++;
+            if (q4.id === 'q4a') score++;
+            
+            resultDiv.style.display = 'block';
+            
+            if (score === 0) {
+                resultDiv.innerHTML = '<i class="fas fa-smile"></i> <strong>Отлично!</strong> У вас здоровые отношения с технологиями. Продолжайте в том же духе!';
+                resultDiv.style.background = '#1e4a3a';
+                resultDiv.style.borderLeftColor = '#73c1b2';
+            } else if (score <= 2) {
+                resultDiv.innerHTML = '<i class="fas fa-meh"></i> <strong>Средний уровень риска.</strong> Возможно, стоит задуматься о некоторых привычках. Попробуйте внедрить цифровой детокс.';
+                resultDiv.style.background = '#4a4a2a';
+                resultDiv.style.borderLeftColor = '#e0b058';
+            } else {
+                resultDiv.innerHTML = '<i class="fas fa-frown"></i> <strong>Высокий уровень цифровой нагрузки.</strong> Рекомендуем обратить внимание на советы и уменьшить время в соцсетях.';
+                resultDiv.style.background = '#5a2a2a';
+                resultDiv.style.borderLeftColor = '#f4acb7';
+            }
+        }
+    </script>
+</body>
+</html>
